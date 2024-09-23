@@ -1,0 +1,12 @@
+{% extends 'base/principal.html' %}
+{% block content %}
+<header class="header">
+    <a class="header-a" href="{% url 'tareas' %}">&#x21a9; Volver</a>
+</header>
+
+<form class="form-cuerpo" method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="boton" type="submit" value="Enviar">
+</form>
+{% endblock content %}

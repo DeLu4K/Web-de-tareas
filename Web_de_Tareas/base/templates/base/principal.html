@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Pendientes</title>
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abel&family=Lato:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Estilos generales */
+      body {
+        background-color: #e3dfff;
+        font-family: "Abel", sans-serif;
+        padding-top: 2rem;
+        margin: 0;
+        color: #4b5156;
+      }
+
+      .container {
+        background-color: #f8f7ff;
+        box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+        max-width: 600px;
+        margin: 2rem auto;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "Lato", sans-serif;
+      }
+
+      a {
+        color: #694de5;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #552ef6;
+      }
+
+      /* Cabecera */
+      .header {
+        background-color: #552ef6;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        color: #ffffff;
+
+        .header-a {
+          color: #ffffff;
+          font-size: 16px;
+        }
+      }
+
+      /* Estilos para el formulario de busqueda*/
+      .envoltorio-form {
+        background-color: #a08df5;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+          padding-inline: 10px;
+          color:#f80606;
+          font-size: 20px;
+          font-weight: 700;
+          margin-bottom: 10px;
+          
+        }
+      }
+
+      .form-busqueda {
+        padding: 10px;
+      }
+
+
+      /* Estilos para las tareas */
+      .envoltorio-tarea {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        background-color: #ffffff;
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s ease;
+      }
+
+      .envoltorio-tarea:hover {
+        background-color: #f1f1f1;
+      }
+
+      .titulo-tarea {
+        display: flex;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 400;
+        color: #4b5156;
+      }
+
+      /* Ícono para tarea completada */
+      .icono-tarea-completa {
+        height: 20px;
+        width: 20px;
+        background-color: rgb(105, 162, 105);
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .icono-tarea-incompleta {
+        height: 20px;
+        width: 20px;
+        background-color: rgb(190, 190, 190);
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      /* Ícono para eliminar tarea */
+      .enlace-eliminar {
+        font-size: 24px;
+        font-weight: 900;
+        color: #ea4220;
+        margin-left: 20px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .enlace-eliminar:hover {
+        color: #b93515;
+      }
+
+      .boton {
+        max-width: fit-content;
+        border: 1px solid #EB796F;
+        background-color: #FAFAFA;
+        color: #EB796F;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .form-cuerpo {
+        padding: 20px;
+        color: #552ef6;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        
+      }
+
+      .footer {
+        padding-top: 0;
+        padding-left: 20px;
+        a {
+          color: #b93515;
+        }
+      }
+
+      /* Media query para pantallas pequeñas */
+      @media (max-width: 600px) {
+        .container {
+          margin: 1rem;
+          padding: 1rem;
+        }
+
+        .header {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      {% block content %}
+      <div class="envoltorio-tarea">
+        <span class="titulo-tarea">Tarea pendiente</span>
+        <span class="enlace-eliminar">&times;</span>
+      </div>
+      {% endblock content %}
+    </div>
+  </body>
+</html>

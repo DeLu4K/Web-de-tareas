@@ -1,0 +1,18 @@
+{% extends 'base/principal.html' %}
+{% block content %}
+<header class="header">
+    <h1>Ingresar</h1>
+</header>
+
+<form class="form-cuerpo" action="" method="post">
+    {% csrf_token %}
+    {{form.as_table}}
+    <input class="boton" type="submit" value="LogIn">
+</form>
+
+<footer class="footer">
+    <p>¿No tienes una cuenta? <a href="{% url 'registro' %}">Registrate</a></p>
+</footer>
+
+{% endblock content %}
+
